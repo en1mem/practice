@@ -83,7 +83,7 @@ public class Task5 {
                 }
             }
 
-            oneOrNullArray = turnArray90Degree(oneOrNullArray, true);
+            oneOrNullArray = turnArray90Degree(oneOrNullArray);
         }
 
         return result.toString();
@@ -106,25 +106,21 @@ public class Task5 {
                 }
             }
 
-            oneOrNullArray = turnArray90Degree(oneOrNullArray, true);
+            oneOrNullArray = turnArray90Degree(oneOrNullArray);
         }
 
 
         return result;
     }
 
-    private static int[][] turnArray90Degree(int[][] oneOrNullArray, boolean clockwise) {
+    private static int[][] turnArray90Degree(int[][] oneOrNullArray) {
 
         final int M = oneOrNullArray.length;
         final int N = oneOrNullArray[0].length;
         int[][] result = new int[N][M];
         for (int i = 0; i < M; i++) {
             for (int j = 0; j < N; j++) {
-                if (clockwise) {
-                    result[j][M - 1 - i] = oneOrNullArray[i][j];
-                } else {
-                    result[M - 1 - j][i] = oneOrNullArray[i][j];
-                }
+                result[j][M - 1 - i] = oneOrNullArray[i][j];
             }
         }
 
