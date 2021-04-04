@@ -5,7 +5,8 @@ import java.util.Arrays;
 
 public class Task5 {
     public static void main(String[] args) throws IOException {
-//        int[][] oneOrNullArray = createOneOrNullArray();
+//        test();
+
         int[][] oneOrNullArray = new int[10][10];
 
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
@@ -24,7 +25,6 @@ public class Task5 {
 
         System.out.println("Incoming story: ");
         String words = bufferedReader.readLine();
-//        String words = "This is a story of how a Baggins had an adventure, found himself doing and saying things altogether.";
         System.out.println(words);
 
         System.out.println();
@@ -125,5 +125,32 @@ public class Task5 {
         }
 
         return result;
+    }
+
+
+    private static void test() {
+        int[][] oneOrNullArray = createOneOrNullArray();
+
+        System.out.println("Incoming story: ");
+        String words = "This is a story of how a Baggins had an adventure, found himself doing and saying things altogether.";
+        System.out.println(words);
+
+        System.out.println();
+        System.out.println();
+
+        System.out.println("Encoded story: ");
+        System.out.println();
+        String[][] encoded = encode(oneOrNullArray, words);
+        for (String[] value : encoded) {
+            System.out.println(Arrays.toString(value));
+            System.out.println();
+        }
+
+        System.out.println();
+        System.out.println();
+
+        System.out.println("Decoded story: ");
+        String decoded = decode(oneOrNullArray, encoded);
+        System.out.println(decoded);
     }
 }

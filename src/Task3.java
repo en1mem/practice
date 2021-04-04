@@ -24,12 +24,7 @@ public class Task3 {
             }
         }
 
-
-//        for (int i = 0; i < nineArray.length; i++) {
-//            for (int j = 0; j < nineArray[i].length; j++) {
-//                nineArray[i][j] = 10 + (int) (Math.random() * 50);
-//            }
-//        }
+//        test(nineArray);
 
         System.out.println("Созданная матрица 9 на 9");
         for (int[] value : nineArray) {
@@ -64,6 +59,14 @@ public class Task3 {
         }
 
         return result;
+    }
+
+    private static void test(int[][] nineArray) {
+        for (int i = 0; i < nineArray.length; i++) {
+            for (int j = 0; j < nineArray[i].length; j++) {
+                nineArray[i][j] = 10 + (int) (Math.random() * 50);
+            }
+        }
     }
 
 }
