@@ -35,6 +35,12 @@ public class Task4 {
             System.out.println("Последовательность: ");
             for (int i = 1; i <= N; i++) {
                 ak = expression(a1, a2, a3, i);
+                if (i == N) {
+                    System.out.print(ak);
+                } else {
+                    System.out.print(ak + ", ");
+                }
+
                 if (i % 2 == 0) {
                     result.add(ak);
                 }
