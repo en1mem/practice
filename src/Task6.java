@@ -31,9 +31,8 @@ public class Task6 {
             int[] mergeExample = array.clone();
             int[] heapExample = array.clone();
 
-
+            //region merge sort
             HelpPojoStatistic mergeStat = new HelpPojoStatistic();
-
 
             long beforeSort = System.currentTimeMillis();
             mergeSort(mergeExample, array.length, mergeStat);
@@ -43,9 +42,11 @@ public class Task6 {
             System.out.println("Потребовалось: " + (afterSort - beforeSort) + " милисекунд");
             System.out.println("Потребовалось: " + mergeStat.getTransferCount() + " пересылок");
             System.out.println("Потребовалось: " + mergeStat.getComparisonsCount() + " сравнений");
+            //endregion
 
             System.out.println();
 
+            //region heap sort
             HelpPojoStatistic heapStat = new HelpPojoStatistic();
 
             beforeSort = System.currentTimeMillis();
@@ -57,6 +58,7 @@ public class Task6 {
             System.out.println("Потребовалось: " + (afterSort - beforeSort) + " милисекунд");
             System.out.println("Потребовалось: " + heapStat.getTransferCount() + " пересылок");
             System.out.println("Потребовалось: " + heapStat.getComparisonsCount() + " сравнений");
+            //endregion
 
             System.out.println();
             System.out.println();
