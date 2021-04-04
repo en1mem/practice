@@ -103,13 +103,16 @@ public class Task6 {
                 statistic.setTransferCount(statistic.getTransferCount() + 1);
                 statistic.setComparisonsCount(statistic.getComparisonsCount() + 1);
             }
+            statistic.setComparisonsCount(statistic.getComparisonsCount() + 1);
         }
         while (i < left) {
             a[k++] = l[i++];
+            statistic.setComparisonsCount(statistic.getComparisonsCount() + 1);
             statistic.setTransferCount(statistic.getTransferCount() + 1);
         }
         while (j < right) {
             a[k++] = r[j++];
+            statistic.setComparisonsCount(statistic.getComparisonsCount() + 1);
             statistic.setTransferCount(statistic.getTransferCount() + 1);
         }
     }
@@ -120,6 +123,7 @@ public class Task6 {
         // Построение кучи (перегруппируем массив)
         for (int i = n / 2 - 1; i >= 0; i--) {
             heapify(arr, n, i, statistic);
+            statistic.setComparisonsCount(statistic.getComparisonsCount() + 1);
         }
         // Один за другим извлекаем элементы из кучи
         for (int i=n-1; i>=0; i--) {
@@ -128,8 +132,8 @@ public class Task6 {
             arr[0] = arr[i];
             arr[i] = temp;
 
-            statistic.setTransferCount(statistic.getTransferCount() + 3);
-
+            statistic.setTransferCount(statistic.getTransferCount() + 2);
+            statistic.setComparisonsCount(statistic.getComparisonsCount() + 1);
             // Вызываем процедуру heapify на уменьшенной куче
             heapify(arr, i, 0, statistic);
         }
@@ -158,7 +162,7 @@ public class Task6 {
             arr[i] = arr[largest];
             arr[largest] = swap;
 
-            statistic.setTransferCount(statistic.getTransferCount() + 3);
+            statistic.setTransferCount(statistic.getTransferCount() + 2);
             statistic.setComparisonsCount(statistic.getComparisonsCount() + 1);
             // Рекурсивно преобразуем в двоичную кучу затронутое поддерево
             heapify(arr, n, largest, statistic);
